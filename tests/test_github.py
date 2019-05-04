@@ -76,7 +76,7 @@ GITHUB_COMMAND_URL = GITHUB_API_URL + "/command"
 GITHUB_PULL_REQUEST_1_COMMIT_COMMENTS = GITHUB_REPO_URL + \
     "/commits/53b970ee04bbc435842c14a2cbfdd623faf74a65/comments"
 GITHUB_PULL_REQUEST_2_COMMIT_COMMENTS = GITHUB_REPO_URL + \
-    "/commits/53b970ee04bbc435842c14a2cbfdd623faf74a65/comments"
+    "/commits/53b970ee04bbc435842c14a2cbfdd623faf74a66/comments"
 
 GITHUB_ENTERPRISE_URL = "https://example.com"
 GITHUB_ENTERPRISE_API_URL = "https://example.com/api/v3"
@@ -276,7 +276,7 @@ class TestGitHubBackend(unittest.TestCase):
         pull_comment_2_reactions = read_file('data/github/github_request_pull_request_1_comment_2_reactions')
         pull_requested_reviewers = read_file('data/github/github_request_requested_reviewers')
         rate_limit = read_file('data/github/rate_limit')
-        pull_request_1_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_1_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
 
         httpretty.register_uri(httpretty.GET,
                                GITHUB_RATE_LIMIT,
@@ -582,8 +582,8 @@ class TestGitHubBackend(unittest.TestCase):
         pull_2_reviews = read_file('data/github/github_request_pull_request_2_reviews')
         pull_2_commits = read_file('data/github/github_request_pull_request_2_commits')
         rate_limit = read_file('data/github/rate_limit')
-        pull_request_1_commit_comments = read_file('data/github/github_request_commit_comments')
-        pull_request_2_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_1_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
+        pull_request_2_commit_comments = read_file('data/github/github_request_pull_request_2_commit_comments')
 
         httpretty.register_uri(httpretty.GET,
                                GITHUB_RATE_LIMIT,
@@ -802,7 +802,7 @@ class TestGitHubBackend(unittest.TestCase):
         pull_request_comment_2_reactions = read_file('data/github/github_request_pull_request_1_comment_2_reactions')
         pull_requested_reviewers = read_file('data/github/github_request_requested_reviewers')
         rate_limit = read_file('data/github/rate_limit')
-        pull_request_1_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_1_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
 
         httpretty.register_uri(httpretty.GET,
                                GITHUB_RATE_LIMIT,
@@ -1057,7 +1057,7 @@ class TestGitHubBackend(unittest.TestCase):
         pull_2_commits = read_file('data/github/github_request_pull_request_2_commits')
         pull_2_reviews = read_file('data/github/github_request_pull_request_2_reviews')
         rate_limit = read_file('data/github/rate_limit')
-        pull_request_1_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_1_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
 
         httpretty.register_uri(httpretty.GET,
                                GITHUB_RATE_LIMIT,
@@ -1380,7 +1380,7 @@ class TestGitHubBackend(unittest.TestCase):
         pull_request_commits = read_file('data/github/github_request_pull_request_1_commits')
         pull_request_comment_2_reactions = read_file('data/github/github_request_pull_request_1_comment_2_reactions')
         pull_requested_reviewers = read_file('data/github/github_request_requested_reviewers')
-        pull_request_1_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_1_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
 
         httpretty.register_uri(httpretty.GET,
                                GITHUB_ENTREPRISE_RATE_LIMIT,
@@ -1867,7 +1867,7 @@ class TestGitHubBackendArchive(TestCaseBackendArchive):
         pull_request_comment_2_reactions = read_file('data/github/github_request_pull_request_1_comment_2_reactions')
         pull_requested_reviewers = read_file('data/github/github_request_requested_reviewers')
         rate_limit = read_file('data/github/rate_limit')
-        pull_request_1_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_1_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
 
         httpretty.register_uri(httpretty.GET,
                                GITHUB_RATE_LIMIT,
@@ -2639,7 +2639,7 @@ class TestGitHubClient(unittest.TestCase):
     def test_pull_commit_comments(self):
         """Test pull commit comments API call"""
 
-        pull_request_commit_comments = read_file('data/github/github_request_commit_comments')
+        pull_request_commit_comments = read_file('data/github/github_request_pull_request_1_commit_comments')
         rate_limit = read_file('data/github/rate_limit')
 
         httpretty.register_uri(httpretty.GET,
