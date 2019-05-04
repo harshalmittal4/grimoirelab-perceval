@@ -771,7 +771,7 @@ class TestGitHubBackend(unittest.TestCase):
             self.assertEqual(len(pull['data']['commits_data']), 1)
             self.assertEqual(len(pull['data']['reviews_data']), 1)
             self.assertEqual(pull['data']['reviews_data'][0]['user_data']['login'], 'zhquan_example')
-            self.assertEqual(len(pull['data']['commits_data'][0]["commit_comments"]), 4)
+            self.assertEqual(len(pull['data']['commits_data'][0]["commit_comments"]), 2)
             self.assertEqual(pull['data']['review_comments_data'][0]['user_data']['login'], "zhquan_example")
             self.assertIsNone(pull['data']['review_comments_data'][2]['user_data'])
 
