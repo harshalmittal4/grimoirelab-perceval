@@ -1484,7 +1484,6 @@ class TestGitHubBackend(unittest.TestCase):
         self.assertEqual(pull['data']['reviews_data'][0]['user_data']['login'], 'zhquan_example')
         self.assertEqual(len(pull['data']['commits_data'][0]["commit_comments"]), 4)
 
-
     @httpretty.activate
     @unittest.mock.patch('perceval.backends.core.github.datetime_utcnow')
     def test_fetch_repo_enterprise(self, mock_utcnow):
@@ -2630,7 +2629,7 @@ class TestGitHubClient(unittest.TestCase):
                                    'X-RateLimit-Remaining': '20',
                                    'X-RateLimit-Reset': '15'
                                })
-  
+
         client = GitHubClient("zhquan_example", "repo", ["aaa"])
 
         pull_reviews_raw = [rev for rev in client.pull_reviews(1)]
